@@ -35,7 +35,7 @@ MenuWrapper.CentralSide = styled.div`
   a {
     text-align: center;
     display: block;
-    text-decoration: nome;
+    text-decoration: none;
     color: #88989E;
     transition: 200ms ease-in-out;
   
