@@ -53,7 +53,7 @@ export default {
   colors,
   breakpoints,
   typographyVariants,
-  fontFamily: `\`Rubik\`, sons-serif`,
+  fontFamily: `'Rubik', sans-serif`,
   borderRadius: '8px',
   transition: '200ms ease-in-out'
 };
