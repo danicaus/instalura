@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { normalìze } from 'styled-normalize';
+import { normalize } from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
-  ${normalìze}
+  ${normalize}
   
   body {
     margin: 0;
