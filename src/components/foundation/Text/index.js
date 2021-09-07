@@ -11,7 +11,7 @@ export const TextStyleVariantsMap = {
         font-size: ${({ theme }) => theme.typographyVariants.titleXS.fontSize};
         font-weight: ${({ theme }) => theme.typographyVariants.titleXS.fontWeight};
         line-height: ${({ theme }) => theme.typographyVariants.titleXS.lineHeight};
-        `,
+      `,
       md: css`
         font-size: ${({ theme }) => theme.typographyVariants.title.fontSize};
         font-weight: ${({ theme }) => theme.typographyVariants.title.fontWeight};
@@ -49,8 +49,8 @@ export default function Text({ tag, variant, children, ...props }) {
 }
 
 Text.propTypes = {
-  tag: PropTypes.string.isRequired,
-  variant: PropTypes.string,
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
+  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
   children: PropTypes.node.isRequired,
 }
 
