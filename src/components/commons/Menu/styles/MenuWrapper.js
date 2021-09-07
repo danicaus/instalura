@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
+import styled, { css } from 'styled-components';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 import { TextStyleVariantsMap } from '../../../foundation/Text';
 
-export const MenuWrapper = styled.nav`
+const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
@@ -24,23 +24,23 @@ export const MenuWrapper = styled.nav`
     `,
     xl: css`
       max-width: 1222px;
-    `
+    `,
   })}
-`
+`;
 
 MenuWrapper.LeftSide = styled.div`
  padding: 0;
  margin: 0;
  order: 1;
  ${breakpointsMedia({
-   md: css`
+    md: css`
     width: 131px;
     height: 32px;
     order: initial;
     padding-right: 16px;
-   `
- })}
-`
+   `,
+  })}
+`;
 
 MenuWrapper.CentralSide = styled.div`
   order: 3;
@@ -74,13 +74,13 @@ MenuWrapper.CentralSide = styled.div`
     transition: 200ms ease-in-out;
 
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         ${TextStyleVariantsMap.smallestException}
         `,
-      md: css`
+    md: css`
         ${TextStyleVariantsMap.paragraph1}
-      `
-    })}
+      `,
+  })}
   
     &:hover,
     &:focus {
@@ -88,7 +88,7 @@ MenuWrapper.CentralSide = styled.div`
       color: #070C0E;
     }
   }
-`
+`;
 
 MenuWrapper.RightSide = styled.div`
   padding: 0;
@@ -100,6 +100,8 @@ MenuWrapper.RightSide = styled.div`
   ${breakpointsMedia({
     md: css`
       order: initial;
-    `
+    `,
   })}
-`
+`;
+
+export default MenuWrapper;

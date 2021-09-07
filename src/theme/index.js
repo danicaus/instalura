@@ -1,4 +1,4 @@
-import { typographyVariants } from './typographyVariants'
+import typographyVariants from './typographyVariants';
 
 const breakpoints = {
   xs: 0,
@@ -53,7 +53,7 @@ export default {
   colors,
   breakpoints,
   typographyVariants,
-  fontFamily: `'Rubik', sans-serif`,
+  fontFamily: '\'Rubik\', sans-serif',
   borderRadius: '8px',
-  transition: '200ms ease-in-out'
+  transition: '200ms ease-in-out',
 };

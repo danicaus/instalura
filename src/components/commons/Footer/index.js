@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
   padding: 14px;
@@ -43,5 +43,5 @@ export default function Footer(props) {
         </a>
       </p>
     </FooterWrapper>
-  )
+  );
 }

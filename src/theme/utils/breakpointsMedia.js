@@ -1,15 +1,13 @@
-import theme from '../index.js'
-import { css } from 'styled-components'
+import { css } from 'styled-components';
+import theme from '../index';
 
-const { breakpoints }  = theme
+const { breakpoints } = theme;
 
-export function breakpointsMedia(cssByBreakpoints) {
-  const breakpointsNames = Object.keys(cssByBreakpoints)
-  return breakpointsNames.map((breakpointName) => {
-    return css`
+export default function breakpointsMedia(cssByBreakpoints) {
+  const breakpointsNames = Object.keys(cssByBreakpoints);
+  return breakpointsNames.map((breakpointName) => css`
       @media screen and (min-width: ${breakpoints[breakpointName]}px) {
         ${cssByBreakpoints[breakpointName]}
       }
-    `
-  })
+    `);
 }

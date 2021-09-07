@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { normalìze } from 'styled-normalize'
+import { normalìze } from 'styled-normalize';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
 
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: ${( { theme }) => theme.fontFamily};
+    font-family: ${({ theme }) => theme.fontFamily};
   }
 
   html, body {
@@ -25,4 +25,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;
+
+export default GlobalStyle;
