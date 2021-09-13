@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -14,6 +15,8 @@ const ModalWrapper = styled.div`
   bottom: 0;
   margin: auto;
   overflow: scroll;
+  transition: .3s;
+  z-index: 3;
 
   ${({ isOpen }) => {
     if (isOpen) {
@@ -23,10 +26,22 @@ const ModalWrapper = styled.div`
       `;
     }
     return css`
-      opacity: 0;
+      /* opacity: 0; */
       pointer-events: none;
+      visibility: hidden;
     `;
   }}
+`;
+
+const ModalContent = styled.div`
+  display: flex;
+  flex: 1;
+  background: white;
+  padding-top: 150px;
+  padding-right: 85px;
+  padding-left: 85px;
+  align-self: right;
+  box-shadow: -10px 0 24px #070C0E5a;
 `;
 
 function Modal({ isOpen, onClose, children }) {
@@ -39,9 +54,30 @@ function Modal({ isOpen, onClose, children }) {
         }
       }}
     >
-      {children({
-        'data-modal-safe-area': 'true',
-      })}
+      <motion.div
+        variants={{
+          open: {
+            x: 0,
+          },
+          closed: {
+            x: '110%',
+          },
+        }}
+        animate={isOpen ? 'open' : 'closed'}
+        transition={{
+          duration: 0.6,
+        }}
+        style={{
+          display: 'flex',
+          flex: 1,
+        }}
+      >
+        <ModalContent>
+          {children({
+            'data-modal-safe-area': 'true',
+          })}
+        </ModalContent>
+      </motion.div>
     </ModalWrapper>
   );
 }
