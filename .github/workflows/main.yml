@@ -24,7 +24,7 @@ jobs:
           node-version: '14.17.0'
 
       # Runs a single command using the runners shell
-      - name: Roda o linter
+      - name: Roda o linter!
         run: yarn lint
       - name: Node Version
         run: node -v
