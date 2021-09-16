@@ -1,8 +1,8 @@
 version: 2
 updates:
-- package-ecosystem: npm
+- package-ecosystem: "npm"
   directory: "/"
   schedule:
-    interval: monthly
+    interval: "monthly"
     time: "12:00"
-  open-pull-request-limit: 10
+  open-pull-requests-limit: 10
