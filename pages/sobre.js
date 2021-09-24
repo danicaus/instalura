@@ -1,8 +1,8 @@
 import React from 'react';
-import UnderConstruction from '../src/components/patterns/UnderConstruction';
+import ErrorPage from '../src/components/patterns/errorPages';
 
 export default function AboutPage() {
   return (
-    <UnderConstruction />
+    <ErrorPage error="underConstruction" />
   );
 }
