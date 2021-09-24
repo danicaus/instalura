@@ -22,7 +22,9 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
     >
-      <Menu />
+      <Menu
+        onCadastrarClick={() => setIsModalOpen(true)}
+      />
       <Modal
         isOpen={isModalOpen}
         onClose={() => {
