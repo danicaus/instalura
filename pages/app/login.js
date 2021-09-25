@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorPage from '../../src/components/patterns/errorPages';
+import ErrorPage from '../../src/components/screens/errorPages';
 
 export default function LoginPage() {
   return (

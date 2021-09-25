@@ -73,7 +73,7 @@ export default function Text({
 
 Text.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span', 'input']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
+  variant: PropTypes.oneOf(['title', 'subTitle', 'paragraph1', 'smallestException']),
   href: PropTypes.string,
   children: PropTypes.node,
 };
