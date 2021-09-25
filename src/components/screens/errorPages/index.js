@@ -13,8 +13,8 @@ export default function ErrorPage({ error }) {
   };
 
   const description = {
-    notFound: 'Oops! Essa página não foi encontrada!',
-    underConstruction: 'Oops! Essa página está em construção',
+    notFound: 'Oops... Essa página não foi encontrada!',
+    underConstruction: 'Oops... Essa página está em construção',
   };
 
   return (
