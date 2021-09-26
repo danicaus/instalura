@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FAQScreen from '../../src/components/screens/FAQScreen';
-
-export default function FAQPage({ faqCategories }) {
-  return (
-    <FAQScreen faqCategories={faqCategories} />
-  );
-}
+import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 
 export async function getStaticProps() {
   const faqCategories = await fetch('https://instalura-api.vercel.app/api/content/faq')
@@ -19,6 +14,20 @@ export async function getStaticProps() {
     },
   };
 }
+
+function FAQPage({ faqCategories }) {
+  return (
+    <FAQScreen faqCategories={faqCategories} />
+  );
+}
+
+export default websitePageHOC(FAQPage, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Perguntas frequentes',
+    },
+  },
+});
 
 FAQPage.propTypes = {
   faqCategories: PropTypes.arrayOf(PropTypes.shape({
