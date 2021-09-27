@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
@@ -36,6 +37,8 @@ export const TextStyleVariantsMap = {
 const TextBase = styled.span`
   ${(props) => TextStyleVariantsMap[props.variant]}
   ${propToStyle('textAlign')}
+  ${propToStyle('marginBottom')}
+  ${propToStyle('display')}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
 `;
 
@@ -52,7 +55,6 @@ export default function Text({
         as={Link}
         href={href}
         variant={variant}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
         {children}
@@ -63,7 +65,6 @@ export default function Text({
     <TextBase
       as={tag}
       variant={variant}
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {children}
