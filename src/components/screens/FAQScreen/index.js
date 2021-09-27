@@ -67,7 +67,11 @@ export default function FAQScreen({ faqCategories }) {
                 listStyle="none"
               >
                 {category.questions.map((question) => (
-                  <li key={question.title}>
+                  <Box
+                    as="li"
+                    marginBottom="16px"
+                    key={question.title}
+                  >
                     <Text
                       href={`/faq/${question.slug}`}
                       variant="paragraph1"
@@ -76,7 +80,7 @@ export default function FAQScreen({ faqCategories }) {
                     >
                       {question.title}
                     </Text>
-                  </li>
+                  </Box>
                 ))}
               </Box>
             </Box>
