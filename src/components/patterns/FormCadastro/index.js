@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Lottie } from '@crello/react-lottie';
 import Button from '../../commons/Button';
-import TextField from '../../forms/TextField';
+import TextField from '../../form/TextField';
 import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
