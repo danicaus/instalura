@@ -1,3 +1,5 @@
+import { setCookie, destroyCookie } from 'nookies';
+
 async function HttpClient(url, { headers, body, ...options }) {
   return fetch(url, {
     headers: {
@@ -12,19 +14,33 @@ async function HttpClient(url, { headers, body, ...options }) {
         return response.json();
       }
       throw new Error('Falha em pegar os dados do servidor');
-    })
-    .then((jsonResponse) => jsonResponse);
+    });
 }
 
 const loginService = {
-  async login({ username, password }, HttpClientModule = HttpClient) {
-    return HttpClientModule('https://instalura-api-git-master-omariosouto.vercel.app/api/login/', {
+  async login({ username, password }) {
+    return HttpClient('https://instalura-api-git-master-omariosouto.vercel.app/api/login/', {
       method: 'POST',
       body: {
         username,
         password,
       },
-    });
+    })
+      .then((jsonResponse) => {
+        const { token } = jsonResponse.data;
+        const DAY_IN_SECONDS = 86400;
+        setCookie(null, 'APP_TOKEN', token, {
+          path: '/',
+          maxAge: DAY_IN_SECONDS * 7,
+        });
+
+        return {
+          token,
+        };
+      });
+  },
+  logout() {
+    destroyCookie(null, 'API_TOKEN');
   },
 };
 
